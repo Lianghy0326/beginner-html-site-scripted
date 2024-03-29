@@ -16,13 +16,21 @@ myImage.onclick = function() {
 let myButton = document.querySelector('button');
 let myHeading = document.querySelector('h1');
 
+// time varaible
+var date = new Date();
+var local_time = d.toLocaleTimeString();
+
 function setUserName() {
-  let myName = prompt('Please enter your name.');
+  let myName = prompt('Please enter your name.');// 立即輸出文字
+  
+  // 若沒有偵測到
   if(!myName) {
     setUserName();
-  } else {
+  } 
+  //有偵測到
+  else {
     localStorage.setItem('name', myName);
-    myHeading.innerHTML = 'Mozilla is cool, ' + myName;
+    myHeading.innerHTML = 'Mozilla is cool, ' + local_time + ' ' + myName;    
   }
 }
 
